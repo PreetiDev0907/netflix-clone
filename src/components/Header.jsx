@@ -43,11 +43,11 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
   return (
-    <div className="absolute w-screen px-16 py-4 bg-gradient-to-b from-black z-10 flex justify-between">
+    <div className="absolute w-screen px-16 py-4 bg-gradient-to-b from-gray-800 z-10 flex justify-between">
       <img className="w-40" src={LOGO_URL} alt="logo" />
       {user && (
         <div className="flex justify-between items-center gap-4">
-          <h4>{user.displayName}</h4>
+          <h4 className="text-white">{user.displayName}</h4>
           <img className="w-10 h-10" src={user.photoURL} alt="user icon" />
           <button
             className="font-bold text-red-600"

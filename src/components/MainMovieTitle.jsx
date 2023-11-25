@@ -1,16 +1,18 @@
 import React from "react";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 const MainMovieTitle = ({ title, description }) => {
   return (
-    <div className="pt-36 px-12">
+    <div className=" w-screen aspect-video pt-[20%] px-12 absolute bg-gradient-to-r from-black text-white">
       <h1 className="font-bold text-3xl">{title}</h1>
-      <p>{description}</p>
+      <p className="hidden md:inline-block py-6 text-lg w-1/4">{description}</p>
       <div className="flex flex-row gap-2">
-        <button className="m-2 p-1 px-4 bg-gray-300 rounded-[4px] text-white">
-          ⏯️ Play
+        <button className=" bg-white text-black py-0.5 md:py-4 px-2 md:px-12 text-xl rounded-lg hover:bg-opacity-80">
+          <PlayArrowIcon fontSize="large" /> Play
         </button>
-        <button className="m-2 p-1 px-4 bg-gray-300 rounded-[4px] text-white">
-          ℹ️ Info
+        <button className="hidden md:inline-block mx-1 bg-gray-500 text-white p-2 px-12 text-xl bg-opacity-50 rounded-lg">
+          <InfoOutlinedIcon /> Info
         </button>
       </div>
     </div>

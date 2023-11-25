@@ -8,11 +8,14 @@ const MainMovieVideo = ({ movie_id }) => {
   if (!movieTrailer) return;
 
   return (
-    <div>
+    <div className=" w-screen">
       <iframe
-        width="560"
-        height="315"
-        src={`https://www.youtube.com/embed/${movieTrailer}?si=8UGTdxExfEw07ojm`}
+        className="w-screen aspect-video"
+        src={
+          "https://www.youtube.com/embed/" +
+          movieTrailer +
+          "?&autoplay=1&mute=1&controls=0&frameborder=0"
+        }
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       ></iframe>

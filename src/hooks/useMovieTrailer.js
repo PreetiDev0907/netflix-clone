@@ -11,12 +11,10 @@ const useMovieTrailer = (movieId) => {
       API_OPTIONS
     );
     const json = await mainMovie.json();
-    const movieTrailer = json?.results?.filter(
-      (video) => video.type === "Trailer"
+    const movieTrailer = json?.results?.find(
+      (video) => video.name === "Official Trailer"
     );
-    const url = movieTrailer.length
-      ? movieTrailer[1]?.key
-      : json?.results[0]?.key;
+    const url = movieTrailer ? movieTrailer?.key : json?.results[0]?.key;
     dispatch(addMovieTrailer(url));
   };
   useEffect(() => {
