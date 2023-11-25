@@ -7,9 +7,9 @@ import {
 } from "firebase/auth";
 import { validator } from "../utils/validator";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BACKGROUND_IMAGE, USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -20,8 +20,6 @@ const Login = () => {
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-
-  const navigate = useNavigate();
 
   const handleSignInToggle = () => {
     setIsSignIn(!isSignIn);
@@ -51,7 +49,6 @@ const Login = () => {
             setIsErrorMessage("User Not Found!");
           }
         });
-      navigate("/browse");
     } else {
       //sign up logic
       const displayName = name.current.value;
@@ -66,8 +63,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: displayName,
-            photoURL:
-              "https://occ-0-5005-3646.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdpkabKqQAxyWzo6QW_ZnPz1IZLqlmNfK-t4L1VIeV1DY00JhLo_LMVFp936keDxj-V5UELAVJrU--iUUY2MaDxQSSO-0qw.png?r=e6e",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               // Profile updated!
@@ -95,17 +91,13 @@ const Login = () => {
             setIsErrorMessage("User Not Found!");
           }
         });
-      navigate("/browse");
     }
   };
   return (
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/ab180a27-b661-44d7-a6d9-940cb32f2f4a/7fb62e44-31fd-4e1f-b6ad-0b5c8c2a20ef/IN-en-20231009-popsignuptwoweeks-perspective_alpha_website_large.jpg"
-          alt="background"
-        />
+        <img src={BACKGROUND_IMAGE} alt="background" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
