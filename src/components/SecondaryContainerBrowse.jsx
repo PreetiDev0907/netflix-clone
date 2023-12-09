@@ -11,10 +11,10 @@ const SecondaryContainerBrowse = () => {
           <MovieLists title={"Now Playing"} movies={movies?.nowPlayingMovies} />
           <MovieLists title={"Trending"} movies={movies?.trendingMovies} />
           <MovieLists title={"New Releases"} movies={movies?.trendingMovies} />
-          <MovieLists title={"Top Picks"} movies={movies?.trendingMovies} />
+          <MovieLists title={"Top Picks"} movies={movies?.topRatedMovies} />
           <MovieLists
-            title={"Blockbuster Movies"}
-            movies={movies?.trendingMovies}
+            title={"Upcoming Movies"}
+            movies={movies?.upcomingMovies}
           />
           <MovieLists
             title={"Only On Netflix GPT"}

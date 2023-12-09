@@ -6,7 +6,9 @@ const MainMovieTitle = ({ title, description }) => {
   return (
     <div className=" w-screen aspect-video pt-[20%] px-12 absolute bg-gradient-to-r from-black text-white">
       <h1 className="font-bold text-3xl">{title}</h1>
-      <p className="hidden md:inline-block py-6 text-lg w-1/4">{description}</p>
+      <p className="hidden md:inline-block py-6 text-lg w-1/4 overflow-auto">
+        {description}
+      </p>
       <div className="flex flex-row gap-2">
         <button className=" bg-white text-black py-0.5 md:py-4 px-2 md:px-12 text-xl rounded-lg hover:bg-opacity-80">
           <PlayArrowIcon fontSize="large" /> Play

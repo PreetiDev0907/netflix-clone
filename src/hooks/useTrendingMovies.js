@@ -11,7 +11,6 @@ const useTrendingMovies = () => {
       API_OPTIONS
     );
     const json = await data.json();
-    // const moviesNames = json.map(elem => )
     dispatch(addTrendingMovies(json.results));
   };
   useEffect(() => {
