@@ -6,7 +6,7 @@ const SecondaryContainerBrowse = () => {
   const movies = useSelector((store) => store?.movies);
   return (
     movies && (
-      <div className="bg-black">
+      <div className="bg-black pt-[40%] md:pt-0">
         <div className="-mt-44 relative z-20">
           <MovieLists title={"Now Playing"} movies={movies?.nowPlayingMovies} />
           <MovieLists title={"Trending"} movies={movies?.trendingMovies} />

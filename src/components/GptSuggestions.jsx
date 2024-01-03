@@ -7,8 +7,14 @@ const GptSuggestions = () => {
   if (!gptMovieNames) return null;
 
   return (
-    <div>
-      <MovieLists title="Search Results" movies={gptMovieDetails[0]} />
+    <div className="bg-inherit">
+      {gptMovieNames.map((movieName, index) => (
+        <MovieLists
+          key={movieName}
+          title={movieName}
+          movies={gptMovieDetails[index]}
+        />
+      ))}
     </div>
   );
 };

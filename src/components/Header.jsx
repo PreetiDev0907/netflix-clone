@@ -58,20 +58,20 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
   return (
-    <div className="absolute w-screen px-16 py-4 bg-gradient-to-b from-gray-800 z-10 flex justify-between">
-      <img className="w-40" src={LOGO_URL} alt="logo" />
+    <div className="fixed w-screen px-8 py-2 md:px-16 md:py-4 bg-gradient-to-b from-gray-800 z-10 flex flex-col md:flex-row justify-between gap-2">
+      <img className="w-32 md:w-40 mx-auto md:mx-0" src={LOGO_URL} alt="logo" />
       {user && (
         <div className="flex justify-between items-center gap-4">
           {isGptSearch ? (
             <>
               <button
-                className="p-2 m-2 bg-red-600 rounded-md text-white"
+                className="px-6 py-1 md:p-2 md:m-2 bg-red-600 rounded-md text-white md:text-base text-xs leading-3"
                 onClick={toggleGptSuggestions}
               >
                 {lang[langKey].backToHome}
               </button>
               <select
-                className="p-2 m-2 bg-gray-900 text-white"
+                className="md:p-2 md:m-2 p-1 m-0 bg-gray-900 text-white max-w-[100px] md:max-w-xs"
                 onChange={handleLanguageChange}
               >
                 {SUPPORTED_LANGUAGES.map((lang) => (

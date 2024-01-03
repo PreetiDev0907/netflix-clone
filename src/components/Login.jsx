@@ -97,13 +97,19 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img src={BACKGROUND_IMAGE} alt="background" />
+        <img
+          className="h-screen w-screen object-cover"
+          src={BACKGROUND_IMAGE}
+          alt="background"
+        />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute w-1/4 bg-black bg-opacity-80 rounded-sm my-32 mx-auto p-12 text-white left-0 right-0"
+        className="absolute w-11/12 md:w-1/4 bg-black bg-opacity-80 rounded-sm my-32 mx-auto p-12 text-white left-0 right-0"
       >
-        <h1 className="text-4xl mb-2">{isSignIn ? "Sign In" : "Sign Up"}</h1>
+        <h1 className="text-2xl md:text-4xl mb-2">
+          {isSignIn ? "Sign In" : "Sign Up"}
+        </h1>
         {!isSignIn && (
           <input
             ref={name}
@@ -132,7 +138,7 @@ const Login = () => {
           {isSignIn ? "Sign In" : "Sign Up"}
         </button>
         <label htmlFor="">
-          <input className="p-1" type="checkbox" />
+          <input className="p-1 " type="checkbox" />
           Remember Me
         </label>
         <div className="p-2 cursor-pointer" onClick={handleSignInToggle}>
